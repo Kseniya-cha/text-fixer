@@ -3,12 +3,17 @@ package config
 type Config struct {
 	Logger `yaml:"logger"`
 	File   `yaml:"file"`
-	Mode   string `yaml:"mode"`
+	// mode: add - добавить объект, remove - удалить
+	Mode string `yaml:"mode"`
 }
 
 type File struct {
+	// путь до файла
 	Path string `yaml:"path"`
+	// имя файла с указанием расширения (docx, doc, txt)
 	Name string `yaml:"name"`
+	// какую строку нужно вставить или удалить в начале абзаца
+	Object string `yaml:"object"`
 }
 
 type Logger struct {

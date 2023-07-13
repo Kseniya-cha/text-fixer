@@ -23,22 +23,22 @@ func ReadFix(path string) (string, error) {
 	return txt, nil
 }
 
-func ReplaceTabs(txt string, mode string) (string, error) {
+func ReplaceTabs(txt, mode, obj string) (string, error) {
 
 	var newTxt string
 
 	switch mode {
 	case "add":
-		if string(txt[:5]) == "<tab>" {
-			return newTxt, errors.New("<tab> already in text")
+		if string(txt[:5]) == obj {
+			return newTxt, errors.New(obj + " already in text")
 		}
-		newTxt = "<tab>" + strings.Replace(txt, "\n\n", "\n\n<tab>", -1)
+		newTxt = obj + strings.Replace(txt, "\n\n", "\n\n"+obj, -1)
 
 	case "remove":
-		if string(txt[:5]) != "<tab>" {
-			return newTxt, errors.New("there is no <tab> in text")
+		if string(txt[:5]) != obj {
+			return newTxt, errors.New("there is no " + obj + " in text")
 		}
-		newTxt = string(strings.Replace(txt, "\n\n<tab>", "\n\n", -1)[5:])
+		newTxt = string(strings.Replace(txt, "\n\n"+obj, "\n\n", -1)[len(obj):])
 	}
 
 	return newTxt, nil

@@ -50,7 +50,9 @@ func (cfg *Config) readParametersFromConfig(v *viper.Viper) error {
 // readFlags реализует возможность передачи параметров
 // конфигурационного файла при запуске из командной строки
 func readFlags(cfg *Config) {
-	flag.StringVar(&cfg.Path, "path", cfg.Path, "file for processing")
+	flag.StringVar(&cfg.Path, "path", cfg.Path, "path to file for processing")
+	flag.StringVar(&cfg.Name, "name", cfg.Name, "name of file for processing")
+	flag.StringVar(&cfg.Object, "object", cfg.Object, "object for processing")
 
 	flag.StringVar(&cfg.LogLevel, "logLevel", cfg.LogLevel, "The level of logging parameter")
 	flag.BoolVar(&cfg.LogFileEnable, "logFileEnable", cfg.LogFileEnable, "The statement whether to log to a file")

@@ -1,4 +1,0 @@
-{"level":"[INFO]","time":"2023-07-13T01:33:46.899+0300","caller":"cmd/project.go:32","message":"file readed without extra spaces","file":"/home/kseniya/Рабочий стол/ret_heaven.docx"}
-{"level":"[INFO]","time":"2023-07-13T01:33:46.900+0300","caller":"cmd/project.go:38","message":"tabs replaced","file":"/home/kseniya/Рабочий стол/ret_heaven.docx"}
-{"level":"[INFO]","time":"2023-07-13T01:33:46.900+0300","caller":"cmd/project.go:44","message":"new file saved"}
-{"level":"[INFO]","time":"2023-07-13T01:33:46.900+0300","caller":"cmd/project.go:20","message":"exiting..."}
